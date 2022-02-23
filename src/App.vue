@@ -1,21 +1,20 @@
 <template>
   <div id="app">
     <myHeader></myHeader>
-    <ListaDischi></ListaDischi>
+    <listaDischi></listaDischi>
   </div>
 </template>
 
 <script>
 import myHeader from './components/myHeader.vue';
-
-import ListaDischi from './components/ListaDischi.vue';
+import listaDischi from './components/listaDischi.vue';
 
 
 export default {
   name: 'App',
   components: {
     myHeader,
-    ListaDischi,
+    listaDischi,
     
   }
 }
