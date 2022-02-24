@@ -16,6 +16,7 @@
 
 // integro axios 
 const axios = require('axios');
+
 export default {
      name:"listaDischi",
      data() {
@@ -23,6 +24,7 @@ export default {
             ListaDischi: []
         }
     },
+    
     methods: {
         getDischi() {
             axios.get('https://flynn.boolean.careers/exercises/api/array/music')
@@ -51,7 +53,6 @@ export default {
     .Cdisc {
     margin: 0 auto;
     width: 80%;
-    height: 100vh;
     display: flex;
     flex-wrap: wrap;
     }
@@ -67,9 +68,10 @@ export default {
     h3{
         color: white;
         text-align: center;
+        font-size: 30px;
     }
     span {
-        color: lightgray;
+        color: rgb(126, 125, 125);
         text-align: center;
     }
 }
