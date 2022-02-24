@@ -12,7 +12,7 @@
 }
 </script>
 
-<style>
+<style lang="scss">
 select {
     width: 200px;
     margin-right: 20px;

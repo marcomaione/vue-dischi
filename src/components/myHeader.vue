@@ -30,8 +30,8 @@ export default {
     justify-content: space-between;
     align-items: center;
     .logo img {
-        max-width: 50px;
-        margin:15px 20px;
+    max-width: 50px;
+    margin:15px 20px;
     }
 
 
