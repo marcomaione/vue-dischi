@@ -21,7 +21,8 @@ export default {
      name:"listaDischi",
      data() {
          return {
-            ListaDischi: []
+            ListaDischi: [],
+            generi: []
         }
     },
     
@@ -30,7 +31,12 @@ export default {
             axios.get('https://flynn.boolean.careers/exercises/api/array/music')
             .then((response) => {
                 this.ListaDischi = response.data.response;
-                console.log(response);
+                
+                this.ListaDischi.forEach(disc => {
+                    if(!this.generi.includes(disc.genre)) {
+                        this.generi.push(disc.genre);
+                    }
+                });
 
             })
         }
