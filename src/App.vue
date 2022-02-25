@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <myHeader :genresList="genresList" ></myHeader>
-    <listaDischi @listaGeneri="setGenres"></listaDischi>
+    <myHeader @selectedGenreEvt="selectedGnr" :genresList="genresList" ></myHeader>
+    <listaDischi @listaGeneri="setGenres" :selectedGnr="selectedGnr"></listaDischi>
   </div>
 </template>
 
@@ -20,12 +20,17 @@ export default {
   dat() {
     return {
       genresList: [],
+      selectedGnr:''
 
     }
   },
   methods: {
     setGenres(generiEvt) {
       this.genresList = generiEvt;
+
+    },
+    setSelectedGnr(selectedGenreEvt) {
+      this.selectedGnr = selectedGenreEvt;
 
     }
 

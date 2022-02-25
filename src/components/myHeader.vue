@@ -4,9 +4,9 @@
         <img src="https://cantabrialabsdifacooper.it/wp-content/uploads/2021/03/png-clipart-spotify-logo-spotify-computer-icons-podcast-music-apps-miscellaneous-angle-1-e1614848134495-300x300.png" alt="">
     </div>
     <div class="select">
-        <select>
-            <option>seleziona il genere</option>
-            <option v-for="(genre, index) in genresList" :value="generi" :key="index">{{genre}}</option>
+        <select v-model="selectedGenre" @change="$emit('selectedGenreEvt', selectedGenre)">
+            <option value="">seleziona un genere</option>
+            <option v-for="(genre, index) in genresList" :value="genre" :key="index">{{genre}}</option>
         </select>
     </div>
     
@@ -18,7 +18,12 @@ export default {
     name:"myHeader",
     props: {
                 'genresList':Array
-         },
+            },
+    data() {
+        return {
+            selectedGenre: ''
+        }
+    }
 
 };
 </script>

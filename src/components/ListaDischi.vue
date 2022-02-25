@@ -1,7 +1,7 @@
 <template>
     <div class="back">
         <div class="Cdisc">
-            <div class="card" v-for="(disco, index) in ListaDischi" :key="index">
+            <div class="card" v-for="(disco, index) in dischiFiltrati" :key="index">
             <img :src="disco.poster">
             <h3>{{disco.title}}</h3>
             <span>{{disco.author}}</span>
@@ -19,11 +19,29 @@ const axios = require('axios');
 
 export default {
      name:"listaDischi",
+     props: {
+         'selectedGnr': String
+        },
      data() {
          return {
             ListaDischi: [],
             generi: []
         }
+    },
+    computed: {
+        dischiFiltrati() {
+            if (this.selectedGnr == '') {
+                return this.ListaDischi;
+            } else {
+                return this.ListaDischi.filter( disc => {
+                  return disc.genre == this.selectedGnr;
+
+                });
+
+            }
+           
+        }
+
     },
     
     methods: {
