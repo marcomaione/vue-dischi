@@ -38,6 +38,10 @@ export default {
                     }
                 });
 
+                this.$emit('listaGeneri', this.generi);
+
+
+
             })
         }
     },
